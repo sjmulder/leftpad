@@ -1,0 +1,44 @@
+.Dd June 25, 2019
+.Dt LEFTPAD 1
+.Os
+.Sh NAME
+.Nm leftpad
+.Nd pad a string to a desired length
+.Sh SYNOPSIS
+.Nm
+.Ar string
+.Ar length
+.Op Ar padding
+.Sh DESCRIPTION
+.Nm
+outputs
+.Ar padding
+.Pq or spaces if omitted
+and
+.Ar string ,
+where
+.Ar padding
+is repeated or cut off as needed to make for a minimum final string of
+.Ar length
+characters.
+.Sh EXAMPLES
+Pad the string
+.Qq 5581
+to 16 characters:
+.Bd -literal -offset indent
+$ leftpad 5581 16 '*'
+***********5581
+.Ed
+.Pp
+Using
+.Nm
+to repeat a string:
+.Bd -literal -offset indent
+$ leftpad '' 40 _-
+_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+.Ed
+.Sh SEE ALSO
+.Xr leftpad 3
+.Sh AUTHORS
+.An Sijmen J. Mulder
+.Aq Mt ik@sjmulder.nl

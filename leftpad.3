@@ -1,0 +1,86 @@
+.Dd June 25, 2019
+.Dt LEFTPAD 3
+.Os
+.Sh NAME
+.Nm leftpad
+.Nd pad a string to a desired length
+.Sh SYNOPSIS
+.In leftpad.h
+.Ft size_t
+.Fo leftpad
+.Fa "const char *str"
+.Fa "const char *padding"
+.Fa "size_t min_len"
+.Fa "char *dest" 
+.Fa "size_t dest_sz"
+.Fc
+.Sh DESCRIPTION
+.Fn leftpad
+writes
+.Fa padding
+.Po
+or spaces if
+.Dv NULL
+or empty
+.Pc
+and
+.Fa str
+.Po
+if not
+.Dv NULL
+.Pc
+to
+.Fa dest ,
+where
+.Fa padding
+is repeated or cut off as needed to make for a minimum final string length of
+.Fa min_len .
+.Pp
+If
+.Fa dest
+is
+.Dv NULL
+or
+.Fa dest_sz
+0, nothing is written. Otherwise, up to
+.Fa dest_sz
+characters are written, including the
+.Ql \e0
+terminator, possibly truncating the output.
+.Sh RETURN VALUES
+The length of the output string.
+If less than
+.Fa dest_sz ,
+the output has not been truncated.
+.Sh EXAMPLES
+Pad the string
+.Qq 5581
+to 16 characters, assuming
+.Va buf
+is a character array of sufficient size:
+.Bd -literal -offset indent
+leftpad("5581", "*", 16, buf, sizeof(buf));
+puts(buf); /* outputs: ************5581 */
+.Ed
+.Pp
+Using
+.Fn leftpad
+to repeat a string:
+.Bd -literal -offset indent
+leftpad(NULL, "_-", 40, buf, sizeof(buf));
+puts(buf); /* outputs: _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- */
+.Ed
+.Pp
+Calling
+.Fn leftpad
+without a buffer to find out the required buffer size:
+.Bd -literal -offset indent
+size_t len = leftpad(some_str, " ", 10);
+char *buf = malloc(len+1); /* +1 for terminating NUL */
+leftpad(some_str, " ", 10, buf, len+1);
+.Ed
+.Sh SEE ALSO
+.Xr leftpad 1
+.Sh AUTHORS
+.An Sijmen J. Mulder
+.Aq Mt ik@sjmulder.nl
