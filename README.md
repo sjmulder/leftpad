@@ -74,6 +74,11 @@ To build, test, install, and uninstall:
     make install   [DESTDIR=] [PREFIX=/usr/local] [MANPREFIX=PREFIX/man]
     make uninstall [DESTDIR=] [PREFIX=/usr/local] [MANPREFIX=PREFIX/man]
 
+**Note:** to run **leftpad** without installing, it may be needed to set
+LD_LIBRARH_PATH as follows:
+
+    $ LD_LIBRARY_PATH=. leftpad
+
 The following files are installed:
 
     bin/leftpad
