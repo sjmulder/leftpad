@@ -49,12 +49,13 @@ is a character array of sufficient size:
     leftpad("5581", "*", 16, buf, sizeof(buf));
     puts(buf); /* outputs: ************5581 */
 
-Using leftpad() to repeat a string:
+Using **leftpad()** to repeat a string:
 
     leftpad(NULL, "_-", 40, buf, sizeof(buf));
     puts(buf); /* outputs: _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- */
 
-Calling leftpad() without a buffer to find out the required buffer size:
+Calling **leftpad()** without a buffer to find out the required buffer
+size:
 
     size_t len = leftpad(some_str, " ", 10);
     char *buf = malloc(len+1); /* +1 for terminating NUL */
