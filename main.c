@@ -2,6 +2,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
+#ifdef __OpenBSD__
+# include <unistd.h>
+#endif
+
 #include "leftpad.h"
 
 int
@@ -12,6 +17,13 @@ main(int argc, char **argv)
 	char *end;
 	char *buf;
 	size_t buf_len;
+
+#ifdef __OpenBSD__
+	if (pledge("stdio", NULL) == -1) {
+		fputs("leftpad: pledge() failed\n", stderr);
+		return 0;
+	}
+#endif
 
 	if (argc == 4)
 		padding = argv[3];
