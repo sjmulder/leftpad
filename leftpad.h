@@ -1,3 +1,5 @@
+/* leftpad.h - Copyright (c) 2019, Sijmen J. Mulder (see LICENSE.md) */
+
 /*
  * leftpad() - pad a string to a desired length
  *

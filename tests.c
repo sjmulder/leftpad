@@ -1,3 +1,5 @@
+/* tests.c - Copyright (c) 2019, Sijmen J. Mulder (see LICENSE.md) */
+
 #include <string.h>
 #include <assert.h>
 #include "leftpad.h"

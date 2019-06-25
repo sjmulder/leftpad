@@ -1,3 +1,5 @@
+/* leftpad.c - Copyright (c) 2019, Sijmen J. Mulder (see LICENSE.md) */
+
 #include <stddef.h>
 #include "leftpad.h"
 
