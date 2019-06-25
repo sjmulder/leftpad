@@ -1,6 +1,11 @@
 leftpad
 =======
-Pad a string to a desired length.
+Pad a string to a desired length. Library & CLI.
+
+Key features:
+ - Highly portable.
+ - No dependencies: CLI needs only libc, library is freestanding!
+ - Detailed man(1) documentation for both the CLI and library.
 
 CLI
 ---
