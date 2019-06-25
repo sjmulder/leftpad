@@ -39,7 +39,7 @@ leftpad: main.o libleftpad.so
 	$(CC) $(LDFLAGS) -L. -o leftpad main.o -lleftpad
 
 libleftpad.so: leftpad.o
-	$(CC) $(LDFLAGS) -shared -o libleftpad.so leftpad.o
+	$(CC) $(LDFLAGS) -shared -nostdlib -o libleftpad.so leftpad.o
 
 libleftpad.a: leftpad.o
 	$(AR) $(ARFLAGS) libleftpad.a leftpad.o
