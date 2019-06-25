@@ -72,7 +72,7 @@ Building
 The CLI requires only the C standard library. The library has no
 dependencies.
 
-A Makefile is provided for Unix systems such as Linux, BSD, and MacOS.
+A Makefile is provided for Unix systems such as Linux, BSD, and macOS.
 To build, test, install, and uninstall:
 
     make
