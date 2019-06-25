@@ -1,5 +1,5 @@
 leftpad
-leftpad.so
-leftpad.a
+libleftpad.so
+libleftpad.a
 tests
 *.o
