@@ -26,11 +26,11 @@ Library
 
     size_t
     leftpad(
-	const char *str,
-	const char *padding,
-	size_t min_len,
-	char *dest,
-	size_t dest_sz);
+        const char *str,
+        const char *padding,
+        size_t min_len,
+        char *dest,
+        size_t dest_sz);
 
 **leftpad()** writes *padding* (or spaces if NULL or empty) and *str*
 to *dest*, where *padding* is repeated or cut off as needed to make
