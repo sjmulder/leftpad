@@ -44,6 +44,9 @@ libleftpad.so: leftpad.o
 libleftpad.a: leftpad.o
 	$(AR) $(ARFLAGS) libleftpad.a leftpad.o
 
+leftpad.o: leftpad.c
+	$(CC) $(CFLAGS) -c -fPIC -o leftpad.o leftpad.c
+
 tests: tests.o libleftpad.so
 	$(CC) $(LDFLAGS) -L. -o tests tests.o -lleftpad
 
