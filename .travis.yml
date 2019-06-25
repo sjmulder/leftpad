@@ -1,0 +1,4 @@
+language: c
+script: make && make check
+compiler: [gcc, clang]
+os: [linux, osx]
