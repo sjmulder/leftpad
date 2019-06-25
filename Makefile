@@ -15,10 +15,12 @@ clean:
 	rm -f leftpad.o main.o tests.o
 
 install: all
+	install -d $(DESTDIR)$(PREFIX)/bin
 	install -d $(DESTDIR)$(PREFIX)/lib
 	install -d $(DESTDIR)$(PREFIX)/include
 	install -d $(DESTDIR)$(MANPREFIX)/man1
 	install -d $(DESTDIR)$(MANPREFIX)/man3
+	install -m755 leftpad       $(DESTDIR)$(PREFIX)/bin
 	install -m755 libleftpad.so $(DESTDIR)$(PREFIX)/lib
 	install -m644 libleftpad.a  $(DESTDIR)$(PREFIX)/lib
 	install -m644 leftpad.h     $(DESTDIR)$(PREFIX)/include
@@ -26,6 +28,7 @@ install: all
 	install -m644 leftpad.3     $(DESTDIR)$(MANPREFIX)/man3
 
 uninstall:
+	rm -f $(DESTDIR)$(PREFIX)/bin/leftpad
 	rm -f $(DESTDIR)$(PREFIX)/lib/libleftpad.so
 	rm -f $(DESTDIR)$(PREFIX)/lib/libleftpad.a
 	rm -f $(DESTDIR)$(PREFIX)/include/leftpad.h
