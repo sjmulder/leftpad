@@ -22,6 +22,7 @@ Using **leftpad** to repeat a string:
 
 Library
 -------
+    #include <stddef.h>     /* for size_t */
     #include <leftpad.h>
 
     size_t
