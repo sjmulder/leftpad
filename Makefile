@@ -36,19 +36,19 @@ uninstall:
 	rm -f $(DESTDIR)$(MANPREFIX)/man3/leftpad.3
 
 leftpad: main.o libleftpad.so
-	$(CC) $(LDFLAGS) -L. -o leftpad main.o -lleftpad
+	$(LINK.c) -L. -o leftpad main.o -lleftpad
 
 libleftpad.so: leftpad.o
-	$(CC) $(LDFLAGS) -shared -nostdlib -o libleftpad.so leftpad.o
+	$(LINK.c) -shared -nostdlib -o libleftpad.so leftpad.o
 
 libleftpad.a: leftpad.o
 	$(AR) $(ARFLAGS) libleftpad.a leftpad.o
 
 leftpad.o: leftpad.c
-	$(CC) $(CFLAGS) -c -fPIC -o leftpad.o leftpad.c
+	$(COMPILE.c) -fPIC -o leftpad.o leftpad.c
 
 tests: tests.o libleftpad.so
-	$(CC) $(LDFLAGS) -L. -o tests tests.o -lleftpad
+	$(LINK.c) -L. -o tests tests.o -lleftpad
 
 leftpad.o:	leftpad.h
 main.o:		leftpad.h
