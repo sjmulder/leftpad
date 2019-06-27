@@ -10,31 +10,13 @@ Key features:
 Testimonials
 ------------
 
-> - Small library: check
-> - Allows me to use my own allocation strategy: check
-> - Documentation: check
-> - Tests: check
-> - Usable license: check
-
- -- VictorSCushman on Reddit
-
-> This is a great example of best practises and easy to follow due to
-> its simplicity, nice work.
-
- -- kartoffelwaffel on Reddit
-
-> I actually quite like it! Small and compact example of a unix
-> project. I think I will use that as a boilerplate in the future.
-
- -- zondan on Reddit
-
 > Couldn't you just printf with a variable format string?
 
- -- kartoffelwaffel on Reddit
+ ~ kartoffelwaffel on Reddit
 
 > Thanks, I hate it
 
- -- not_a_novel_account on Reddit
+ ~ not_a_novel_account on Reddit
 
 CLI
 ---
